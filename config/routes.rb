@@ -36,7 +36,7 @@ TalentSpace::Application.routes.draw do
 
   end
 
-  get 'pages/about'
+  get '/about' => 'pages#about'
   get 'pages/contact_us'
 
   get '/apply' => 'submissions#new'

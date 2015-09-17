@@ -25,7 +25,7 @@
           %li{ class: set_active(apply_path) || set_active('/submissions') }
             = link_to 'Apply', apply_path
           %li
-            %a{:href => "#"} About
+            = link_to 'About', about_path
           %li
             = link_to 'Sign In', new_user_session_path
       = link_to '/' do

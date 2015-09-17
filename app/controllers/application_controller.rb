@@ -7,8 +7,17 @@ class ApplicationController < ActionController::Base
   before_action :set_honeybadger_context
   before_action :set_device_type
   before_action :set_layout_carrier
+  before_filter :authenticate
 
   private
+
+  def authenticate
+    if Rails.env.production?
+      authenticate_or_request_with_http_basic do |username, password|
+        username == "admin" && password == ENV['HTTP_BLOCK_PASSWORD']
+      end
+    end
+  end
 
   def ensure_current_user_is_superadmin!
     authenticate_user!

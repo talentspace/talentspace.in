@@ -19,15 +19,15 @@
     .header.clearfix
       %nav
         %ul.nav.nav-pills.pull-right
-          %li.active{:role => "presentation"}
-            %a{:href => "#"} Home
-          %li{:role => "presentation"}
-            %a{:href => "#"} Apply
-          %li{:role => "presentation"}
+          %li{ class: set_active('/') }
+            = link_to 'Home', '/'
+          %li{ class: set_active(apply_path) }
+            = link_to 'Apply', apply_path
+          %li
             %a{:href => "#"} About
-          %li{:role => "presentation"}
+          %li
             %a{:href => "#"} Contact
-          %li{:role => "presentation"}
+          %li
             %a{:href => "#"} Sign In
       = link_to '/' do
         %h3.text-muted TalentSpace

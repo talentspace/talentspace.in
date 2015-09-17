@@ -33,3 +33,16 @@ body {
 .container-narrow > hr {
   margin: 30px 0;
 }
+
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover
+{
+    outline:0px !important;
+}

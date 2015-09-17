@@ -13,4 +13,7 @@ module ApplicationHelper
     end
   end
 
+  def set_active(path = nil)
+    'active' if path == request.path
+  end
 end

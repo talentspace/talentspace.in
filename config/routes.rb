@@ -1,5 +1,6 @@
 TalentSpace::Application.routes.draw do
 
+  resources :submissions
   devise_for :users, controllers: { registrations: 'registrations' }
 
   # Authentication
@@ -37,6 +38,9 @@ TalentSpace::Application.routes.draw do
 
   get 'pages/about'
   get 'pages/contact_us'
+
+  get '/apply' => 'submissions#new'
+
   resources :contacts, only: [:create]
 
   authenticated :user do

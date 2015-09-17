@@ -29,7 +29,7 @@
           %li
             %a{:href => "#"} Contact
           %li
-            %a{:href => "#"} Sign In
+            = link_to 'Sign In', new_user_session_path
       = link_to '/' do
         %h3.text-muted TalentSpace
     = render 'shared/bootstrap_flash'

@@ -1,6 +1,7 @@
 class SubmissionsController < ApplicationController
   before_action :find_submission, only: [:show, :edit, :update, :destroy]
   before_action :ensure_current_user_is_superadmin!, only: [:index, :destroy]
+  before_action :check_spam!
 
   def index
     @submissions = Submission.all
@@ -50,6 +51,12 @@ class SubmissionsController < ApplicationController
 
     def submission_params
       params.require(:submission).permit(:name, :email, :phone_number, :bio, :sample_program)
+    end
+
+    def check_spam!
+      if params[:content].present?
+        render text: 'Unauthorized', status: :unauthorized
+      end
     end
 end
 

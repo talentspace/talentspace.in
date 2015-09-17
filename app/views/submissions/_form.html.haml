@@ -11,5 +11,9 @@
             label: 'Write a program to convert UPPER CASE STRING to lower case in your favourite programming language (optional)'
   #sample_program
 
+  .control-group.spam-check
+    %label Content
+    .controls
+      = text_field_tag :content
   .align-center
     = f.submit 'Submit', class: 'btn btn-lg btn-success apply-submit'

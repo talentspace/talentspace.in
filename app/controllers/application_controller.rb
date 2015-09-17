@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :set_honeybadger_context
   before_action :set_device_type
   before_action :set_layout_carrier
-  before_filter :authenticate
+  # before_filter :authenticate
 
   private
 

@@ -85,6 +85,10 @@ gem 'email_prefixer'
 # not used in development.
 gem 'unicorn', group: [:staging, :production]
 
+# Ace code editor
+gem 'ace-rails-ap'
+
+
 group :development do
 
   # application server for development

@@ -14,6 +14,7 @@
 
   .help-inline {
     margin-left: 10px;
+    color: red;
   }
 }
 
@@ -24,4 +25,15 @@
   .control-group {
     margin-top: 15px;
   }
+}
+
+#sample_program {
+  position: relative;
+  height: 300px;
+  border: 1px solid #999999;
+  margin-bottom: 15px;
+}
+
+.apply-submit {
+  width: 160px;
 }

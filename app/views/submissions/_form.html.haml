@@ -1,6 +1,17 @@
-
 = simple_form_for @submission, html: { class: 'apply bootstrap-center-form-medium' } do |f|
   %h3 Apply to Batch#1 (October 2015)
+  .highlight
+    %h4 Important notes
+    %ul
+      %li Admission is limited to a maximum of 10-15 students per batch.
+      %li Admission will be based on the submitted application. We don't care degree, percentage or arrears.
+      %li You should have a working laptop.
+      %li
+        Training Location:
+        %strong Kakkanad, Kochi. Kerala.
+      %li Training will be held mostly during weekends, and some week days.
+      %li You will receive an email with schedule and fees details once you are accepted.
+
   = f.input :name, width: 50, autofocus: true
   = f.input :email
   = f.input :phone_number, hint: 'Your 10 digit mobile number', label: 'Mobile number'

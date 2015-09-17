@@ -21,7 +21,7 @@
         %ul.nav.nav-pills.pull-right
           %li{ class: set_active('/') }
             = link_to 'Home', '/'
-          %li{ class: set_active(apply_path) }
+          %li{ class: set_active(apply_path) || set_active('/submissions') }
             = link_to 'Apply', apply_path
           %li
             %a{:href => "#"} About

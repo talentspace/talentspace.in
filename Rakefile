@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Wheel::Application.load_tasks
+TalentSpace::Application.load_tasks

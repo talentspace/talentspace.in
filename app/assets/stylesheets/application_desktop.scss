@@ -2,3 +2,34 @@
  *= require ./application_common
  *= require_tree ./desktop
  */
+
+ /* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer-text a {
+  color: inherit;
+}
+
+.align-center {
+  text-align: center;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 970px) {
+  .container {
+    max-width: 960px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}

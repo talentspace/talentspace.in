@@ -12,24 +12,33 @@
     = stylesheet_link_tag "application_desktop", media: "all"
     / <link rel="icon" href="/favicon.ico" type="image/x-icon">
     / <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  %body{class: "#{@layout_carrier.class_for_body}"}
-    .navbar.navbar-default.navbar-static-top{role: "navigation"}
-      .container
-        .navbar-header
-          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{href: "/"} TalentSpace
-        .navbar-collapse.collapse
-          = render 'shared/nav'
-    .container.page
-      .row
-        .col-sm-12
-          = render 'shared/bootstrap_flash'
-          = yield
-    %footer
-      / for footer
-    / Placed at the end of the document so the pages load faster
-    = javascript_include_tag "application_desktop"
+
+
+  %body
+  .container
+    .header.clearfix
+      %nav
+        %ul.nav.nav-pills.pull-right
+          %li.active{:role => "presentation"}
+            %a{:href => "#"} Home
+          %li{:role => "presentation"}
+            %a{:href => "#"} Apply
+          %li{:role => "presentation"}
+            %a{:href => "#"} About
+          %li{:role => "presentation"}
+            %a{:href => "#"} Contact
+          %li{:role => "presentation"}
+            %a{:href => "#"} Sign In
+      = link_to '/' do
+        %h3.text-muted TalentSpace
+    = render 'shared/bootstrap_flash'
+    = yield
+    %footer.footer
+      .pull-right
+        %p.footer-text
+          Made with ♥ in
+          = link_to 'Kochi', 'https://en.wikipedia.org/wiki/Kochi', target: '_blank'
+      %p © TalentSpace 2014
+
+
+  = javascript_include_tag "application_desktop"

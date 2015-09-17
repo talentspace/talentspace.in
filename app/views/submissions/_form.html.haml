@@ -1,7 +1,7 @@
 
 = simple_form_for @submission, html: { class: 'apply bootstrap-center-form-medium' } do |f|
   %h3 Apply to Batch#1 (October 2015)
-  = f.input :name, width: 50
+  = f.input :name, width: 50, autofocus: true
   = f.input :email
   = f.input :phone_number, hint: 'Your 10 digit mobile number', label: 'Mobile number'
   = f.input :bio, label: 'Tell us about yourself',

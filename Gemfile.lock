@@ -30,8 +30,8 @@ GIT
       activesupport
 
 GIT
-  remote: git://github.com/capistrano/rails.git
-  revision: f93317008905891fc449a81fa5051e4e135b51b3
+  remote: git://github.com/ershad/capistrano-rails.git
+  revision: 363f18d21640c0aec45f9ad46d34c7984a0416ef
   specs:
     capistrano-rails (1.1.3)
       capistrano (~> 3.1)

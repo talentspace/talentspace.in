@@ -40,3 +40,14 @@
       = text_field_tag :content
   .align-center
     = f.submit 'Submit', class: 'btn btn-lg btn-success apply-submit'
+
+:javascript
+  jQuery(document).ready(function(){
+    var editor = ace.edit("sample_program");
+
+    var textarea = $('textarea[name="submission[sample_program]"]').hide();
+    editor.getSession().setValue(textarea.val());
+    editor.getSession().on('change', function(){
+      textarea.val(editor.getSession().getValue());
+    });
+  });

@@ -18,12 +18,23 @@
   }
 }
 
+@media (min-width: 970px) {
+  .apply {
+    max-width: 73%;
 
-.apply {
-  max-width: 73%;
+    .control-group {
+      margin-top: 15px;
+    }
+  }
+}
 
-  .control-group {
-    margin-top: 15px;
+@media (max-width: 600px) {
+  .apply {
+    max-width: 100%;
+
+    .control-group {
+      margin-top: 15px;
+    }
   }
 }
 

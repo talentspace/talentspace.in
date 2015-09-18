@@ -1,6 +1,6 @@
 class SubmissionsController < ApplicationController
   before_action :find_submission, only: [:show, :edit, :update, :destroy]
-  before_action :ensure_current_user_is_superadmin!, only: [:index, :destroy, :show, :update]
+  before_action :ensure_current_user_is_superadmin!, only: [:index, :destroy, :show]
   before_action :check_spam!
 
   def index
@@ -31,7 +31,7 @@ class SubmissionsController < ApplicationController
   def update
     if @submission.update_attributes(submission_params)
       flash[:notice] = "Successfully updated your application."
-      redirect_to @submission
+      redirect_to root_path
     else
       render :action => 'edit'
     end

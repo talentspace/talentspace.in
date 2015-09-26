@@ -38,8 +38,12 @@
         %ul.nav.nav-pills.pull-right
           %li{ class: set_active('/') }
             = link_to 'Home', '/'
-          %li{ class: set_active(apply_path) || set_active('/submissions') }
-            = link_to 'Apply', apply_path
+          - if current_user && current_user.super_admin?
+            %li{ class: set_active('/submissions') }
+              = link_to 'Submissions', submissions_path
+          - else
+            %li{ class: set_active(apply_path) || set_active('/submissions') }
+              = link_to 'Apply', apply_path
           %li{ class: set_active(about_path) }
             = link_to 'About', about_path
           %li{ class: set_active(new_user_session_path) }

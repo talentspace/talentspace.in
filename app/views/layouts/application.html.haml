@@ -46,8 +46,13 @@
               = link_to 'Apply', apply_path
           %li{ class: set_active(about_path) }
             = link_to 'About', about_path
-          %li{ class: set_active(new_user_session_path) }
-            = link_to 'Sign In', new_user_session_path
+          - if user_signed_in?
+            %li
+              = link_to 'Sign out', destroy_user_session_path, method: :delete
+          - else
+            %li{ class: set_active(new_user_session_path) }
+              = link_to 'Sign In', new_user_session_path
+
       = link_to '/' do
         %h3.text-muted TalentSpace
     = render 'shared/bootstrap_flash'

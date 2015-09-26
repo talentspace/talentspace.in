@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, :email, presence: true
   validates :email, uniqueness: true
 
+  scope :super_admins, -> { where(role: 'super_admin') }
+
   def name
     [first_name, last_name].join(' ').strip
   end

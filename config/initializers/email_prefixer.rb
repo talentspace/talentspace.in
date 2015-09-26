@@ -1,3 +1,3 @@
-EmailPrefixer.configure do |config|
-  config.stage_name = 'WHEEL'
-end
+# EmailPrefixer.configure do |config|
+#   config.stage_name = 'TalentSpace'
+# end

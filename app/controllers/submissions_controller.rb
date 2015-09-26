@@ -18,6 +18,7 @@ class SubmissionsController < ApplicationController
   def create
     @submission = Submission.new(submission_params)
     if @submission.save
+      send_new_submission_email_notification(@submission)
       flash[:notice] = "Successfully submitted your application. We will contact you in a few days if you are accepted."
       redirect_to root_path
     else
@@ -56,6 +57,12 @@ class SubmissionsController < ApplicationController
     def check_spam!
       if params[:content].present?
         render text: 'Unauthorized', status: :unauthorized
+      end
+    end
+
+    def send_new_submission_email_notification(submission)
+      User.super_admins.each do |user|
+        Mailer.delay.send_new_application_notification(submission, user)
       end
     end
 end

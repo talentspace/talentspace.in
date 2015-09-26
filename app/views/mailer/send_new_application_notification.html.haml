@@ -1,0 +1,19 @@
+%h1 Submission
+%br
+
+%table.table
+  %tbody
+    %tr
+      %td Name
+      %td= @submission.name
+    %tr
+      %td Email
+      %td= @submission.email
+    %tr
+      %td Phone number
+      %td= @submission.phone_number
+    %tr
+      %td Bio
+      %td= @submission.bio
+
+= link_to 'Edit', edit_submission_url(@submission)

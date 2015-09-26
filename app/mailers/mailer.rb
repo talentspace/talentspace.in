@@ -17,4 +17,15 @@ class Mailer < ActionMailer::Base
     end
   end
 
+
+  def send_new_application_notification(submission, admin)
+    @submission = submission
+    to_email = admin.email
+    subject = "[New Submission] #{@submission.name}, #{@submission.phone_number}"
+
+    mail(to: to_email, subject: subject) do |format|
+      format.html
+    end
+  end
+
 end

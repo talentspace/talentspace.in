@@ -1,1 +1,1 @@
-Marginalia.application_name = 'WHEEL'
+Marginalia.application_name = 'TalentSpace'

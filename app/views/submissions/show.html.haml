@@ -1,18 +1,25 @@
-%p
-  %b Name:
-  = @submission.name
-%p
-  %b Email:
-  = @submission.email
-%p
-  %b Phone number:
-  = @submission.phone_number
-%p
-  %b Bio:
-  = @submission.bio
-%p
-  %b Sample program:
-  = @submission.sample_program
+%h1 Submission
+%br
+
+%table.table
+  %tbody
+    %tr
+      %td Name
+      %td= @submission.name
+    %tr
+      %td Email
+      %td= @submission.email
+    %tr
+      %td Phone number
+      %td= @submission.phone_number
+    %tr
+      %td Bio:
+      %td= @submission.bio
+    %tr
+      %td Sample program
+      %td
+        %pre
+          = @submission.sample_program
 
 = link_to 'Edit', edit_submission_path(@submission)
 \|

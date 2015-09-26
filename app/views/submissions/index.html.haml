@@ -1,29 +1,23 @@
-%h1 Listing submissions
+%h1 Submissions
 
-%table
+%table.table
   %thead
     %tr
+      %th Serial No
       %th Name
       %th Email
-      %th Phone number
+      %th Mobile
       %th Bio
-      %th Sample program
       %th
-      %th
-      %th
-      
   %tbody
-    - @submissions.each do |submission|
+    - @submissions.each_with_index do |submission, i|
       %tr
+        %td= i + 1
         %td= submission.name
         %td= submission.email
         %td= submission.phone_number
         %td= submission.bio
-        %td= submission.sample_program
-        %td= link_to 'Show', submission
-        %td= link_to 'Edit', edit_submission_path(submission)
-        %td= link_to 'Destroy', submission, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Submission', new_submission_path
+        %td
+          = link_to 'Show', submission
+          = link_to 'Edit', edit_submission_path(submission)
+          = link_to 'Delete', submission, :method => :delete, :data => { :confirm => 'Are you sure?' }

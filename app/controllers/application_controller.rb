@@ -9,7 +9,13 @@ class ApplicationController < ActionController::Base
   before_action :set_layout_carrier
   # before_filter :authenticate
 
+  force_ssl if: :ssl_configured?
+
   private
+
+  def ssl_configured?
+    Rails.env.production?
+  end
 
   def authenticate
     if Rails.env.production?

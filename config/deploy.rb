@@ -44,6 +44,7 @@ set :git_tag_name, proc { Time.now.to_s.gsub(/[-\s\:\+]+/, '-') }
 
 set :bundle_jobs, 4
 
+before 'deploy:migrate', 'db:backup'
 after 'deploy:finishing', 'deploy:cleanup'
 after 'deploy:cleanup', 'unicorn:restart'
 after 'deploy:cleanup', 'delayed_job:restart'

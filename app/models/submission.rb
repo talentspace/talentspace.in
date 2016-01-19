@@ -12,6 +12,15 @@ class Submission < ActiveRecord::Base
     uniq_id
   end
 
+  def add_as_student
+    student = User.new(role: :student)
+    student.first_name = name.split(' ').first
+    student.last_name  = name.split(' ')[1..-1].join(' ')
+    student.email      = email
+    student.password   = student.password_confirmation = SecureRandom.hex(8)
+    student.save(validate: false)
+  end
+
   private
 
   def generate_uniq_id

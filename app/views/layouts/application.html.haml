@@ -45,9 +45,18 @@
           - else
             %li{ class: set_active(apply_path) || set_active('/submissions') }
               = link_to 'Apply', apply_path
+
+          %li{ class: set_active(students_path) }
+            = link_to 'Students', students_path
+
+          %li{ class: set_active('gallery') }
+            = link_to 'Gallery', about_path
+
           %li{ class: set_active(about_path) }
             = link_to 'About', about_path
           - if user_signed_in?
+            %li{ class: set_active(profile_path) }
+              = link_to 'Profile', profile_path
             %li
               = link_to 'Sign out', destroy_user_session_path, method: :delete
           - else

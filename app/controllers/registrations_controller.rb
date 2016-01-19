@@ -26,7 +26,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    resource_params.permit(:email, :current_password, :first_name, :last_name, :profile_image)
+    resource_params.permit(:email, :current_password, :first_name, :last_name, :profile_image, :description, :twitter_link, :github_link, :linkedin_link, :blog_link)
   end
 
   def password_update_params

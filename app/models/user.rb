@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   before_save :ensure_authentication_token_is_present
 
-  validates :first_name, :last_name, :email, presence: true
+  validates :first_name, :email, presence: true
   validates :email, uniqueness: true
 
   scope :super_admins, -> { where(role: 'super_admin') }

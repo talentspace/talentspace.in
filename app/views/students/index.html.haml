@@ -18,4 +18,5 @@
 
         .col-lg-9.trainer-description
           %p.lead= student.name
-          = student.description.html_safe
+          - if student.description.present?
+            = student.description.html_safe

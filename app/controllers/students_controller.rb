@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   def index
-    @students = User.where(role: 'student', listing_approved: true)
+    @students = User.where(role: 'student').order(:first_name)
   end
 
   def add_as_student

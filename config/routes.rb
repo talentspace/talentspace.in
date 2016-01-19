@@ -1,5 +1,7 @@
 TalentSpace::Application.routes.draw do
 
+  get '/students' => 'students#index'
+
   resources :submissions
   devise_for :users, controllers: { registrations: 'registrations' }
 

@@ -1,14 +1,21 @@
 .row
   .col-lg-12
 
-    .align-center
+    .students-heading.align-center
       %h2 Current and Previous Students
-      %br
-      %br
-    .row
-      .col-lg-3
-        = image_tag 'ershad.jpg', class: 'thumbnail', style: 'height: 220px;margin-top: 5px;'
-      .col-lg-9.trainer-description
-        %p.lead Ershad Kunnakkadan
-        %p
-          Lores Ipsum
+
+    - @students.each do |student|
+      .row.student
+        .col-lg-3
+          = image_tag student.profile_image.url, class: 'thumbnail', style: 'height: 220px;margin-top: 5px;'
+          .social-links
+            = link_to student.linkedin_link, class: 'btn btn-social-icon btn-linkedin' do
+              %span.fa.fa-linkedin
+            = link_to student.github_link, class: 'btn btn-social-icon btn-github' do
+              %span.fa.fa-github
+            = link_to student.twitter_link, class: 'btn btn-social-icon btn-twitter' do
+              %span.fa.fa-twitter
+
+        .col-lg-9.trainer-description
+          %p.lead= student.name
+          = student.description.html_safe

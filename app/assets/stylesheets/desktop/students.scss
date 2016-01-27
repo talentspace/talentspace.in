@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.students-heading {
-  margin-bottom: 40px;
-}
+// .students-heading {
+//   margin-bottom: 40px;
+// }
 
-.student {
-  margin-bottom: 30px;
-}
+// .student {
+//   margin-bottom: 30px;
+// }
 
 
 .social-links {
@@ -16,4 +16,14 @@
   a {
     margin-left: 5px;
   }
+}
+
+
+.alumni-image {
+   margin: 0 auto;
+}
+
+
+.student-row {
+  margin-top: 25px;
 }

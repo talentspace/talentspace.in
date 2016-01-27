@@ -1,21 +1,19 @@
+
 .row
   .col-lg-12
 
     .students-heading.align-center
       %h2 Alumni
 
-    - @students.each do |student|
-      .row.student
-        .col-lg-3
-          = image_tag student.profile_image.url, class: 'thumbnail', style: 'max-width: 210px; margin-top: 5px;'
-          .social-links
-            - [:linkedin_link, :github_link, :twitter_link].each do |social_link|
-              - if student.send(social_link).present?
-                - link_type = social_link.to_s.split('_').first
-                = link_to student.send(social_link), target: '_blank', class: "btn btn-social-icon btn-#{link_type}" do
-                  %span.fa{class: "fa-#{link_type}"}
-
-        .col-lg-9.trainer-description
-          %p.lead= student.name
-          - if student.description.present?
-            = student.description.html_safe
+    - @students.in_groups_of(3, false).each do |group|
+      .row
+        - group.each do |student|
+          .student.col-lg-4
+            = image_tag student.profile_image.url, class: 'thumbnail', style: 'max-width: 210px; margin-top: 5px; min-height: 210px;'
+            .social-links
+              %h4 Ershad Kunnakkanan
+              - [:linkedin_link, :github_link, :twitter_link].each do |social_link|
+                - if student.send(social_link).present?
+                  - link_type = social_link.to_s.split('_').first
+                  = link_to student.send(social_link), target: '_blank', class: "btn btn-social-icon btn-#{link_type}" do
+                    %span.fa{class: "fa-#{link_type}"}

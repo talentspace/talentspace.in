@@ -1,7 +1,7 @@
 # this template has been picked up from
 # https://devcenter.heroku.com/articles/rails-unicorn
 
-worker_processes Integer(ENV["WEB_CONCURRENCY"] || 2)
+worker_processes 1
 
 # 30 seconds is the timeout for heroku. If it is not
 # deployed on heroku then it can be bumped up.

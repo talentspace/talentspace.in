@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   before_action :set_layout_carrier
   # before_filter :authenticate
 
-  force_ssl if: :ssl_configured?
+  # force_ssl if: :ssl_configured?
 
   private
 

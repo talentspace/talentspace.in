@@ -42,9 +42,7 @@
           - if current_user && current_user.super_admin?
             %li{ class: set_active('/submissions') }
               = link_to 'Submissions', submissions_path
-          - else
-            %li{ class: set_active(apply_path) || set_active('/submissions') }
-              = link_to 'Apply', apply_path
+
 
           %li{ class: set_active(alumni_path) }
             = link_to 'Alumni', alumni_path

@@ -8,7 +8,7 @@ set :rbenv_ruby, '2.2.2'
 set :application, 'talentspace'
 
 #TODO: Replace with valid github url
-set :repo_url, 'git@github.com:talentspace/talentspace.in.git'
+set :repo_url, 'git@github.com:ershad/talentspace.in.git'
 
 # Default branch is :master
 ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
